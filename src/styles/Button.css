@@ -1,0 +1,6 @@
+.button-style {
+  border-radius: 16px;
+  color: black;
+  background-color: lightblue;
+  box-shadow: 5px 10px #888888;
+}
