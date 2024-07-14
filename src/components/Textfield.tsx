@@ -3,11 +3,11 @@ import { useState, useEffect } from "react";
 
 /** A reusable textfield component for user input */
 const Textfield = (props: {
-  /** placeholder value for the text input before user input any values */
+  /** maximum length of text the user needs to input */
   maxLength: number;
   /** minimum length of text the user needs to input */
   minLength: number;
-  /** maximum length of text the user needs to input */
+  /** placeholder value for the text input before user input any values */
   placeholder: string;
   /** size controls the size of font of the input textfield */
   size: string;
