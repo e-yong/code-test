@@ -29,5 +29,5 @@ Template.play = async ({ canvasElement }) => {
   let textfield = await canvas.getByTestId("textbox");
 
   await expect(textfield.innerText).toBe("");
-  await expect(textfield).toHaveStyle("fontsize: 20px");
+  await expect(textfield).toHaveStyle("color: rgb(0, 0, 0)");
 };
