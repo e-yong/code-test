@@ -1,6 +1,8 @@
 import Button from "../components/Button";
 import "@fortawesome/fontawesome-free/css/all.css";
 import "../styles/Button.css";
+import { within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 export default {
   title: "Button",
@@ -34,3 +36,15 @@ export const TemplateButton1 = Template.bind({
   clickHandler: () => {},
   size: "small",
 });
+
+Template.play = async ({ canvasElement }) => {
+  let canvas = within(canvasElement);
+  let primaryButton = await canvas.getByRole("button", {
+    name: /initial value/i,
+  });
+
+  await expect(primaryButton.innerText).toBe("initial value");
+  await expect(primaryButton).toHaveStyle(
+    "background-color: rgb(173, 216, 230)"
+  );
+};

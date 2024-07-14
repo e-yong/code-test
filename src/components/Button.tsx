@@ -31,6 +31,7 @@ export const Button = (props: {
   }
   return (
     <button
+      name={"buttonName"}
       style={{
         backgroundColor: `${backgroundColor}`,
         padding: `${buttonSize}`,
