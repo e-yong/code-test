@@ -1,5 +1,7 @@
 import Textfield from "../components/Textfield";
 import "../styles/Textfield.css";
+import { within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 export default {
   tags: ["autodocs"],
@@ -21,3 +23,11 @@ export const TemplateTextfield1 = Template.bind({
   size: "14",
   className: "textfield-style",
 });
+
+Template.play = async ({ canvasElement }) => {
+  let canvas = within(canvasElement);
+  let textfield = await canvas.getByTestId("textbox");
+
+  await expect(textfield.innerText).toBe("");
+  await expect(textfield).toHaveStyle("fontsize: 20px");
+};

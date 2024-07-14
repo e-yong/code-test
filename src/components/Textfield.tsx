@@ -38,6 +38,7 @@ const Textfield = (props: {
       placeholder={placeholder}
       minLength={minLength}
       maxLength={maxLength}
+      data-testid={"textbox"}
       style={{ fontSize: `${size}px`, color: `${color}` }}
       className="textfield-style"
       onChange={(e) => {
